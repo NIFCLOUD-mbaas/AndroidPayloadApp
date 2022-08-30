@@ -45,6 +45,7 @@ public class ApplicationTest {
 
     @Test
     public void validateDisplayScreen() {
+        Utils.allowPermissionsIfNeeded();
         onView(withText("AndroidPayloadPush")).check(matches(isDisplayed()));
         onView(withText("com.nifcloud.mbaas.pushId")).check(matches(isDisplayed()));
         onView(withText("com.nifcloud.mbaas.richUrl")).check(matches(isDisplayed()));
@@ -56,6 +57,7 @@ public class ApplicationTest {
 
     @Test
     public void clickOnSendNotification() throws JSONException {
+        Utils.allowPermissionsIfNeeded();
         Utils utils = new Utils();
         utils.sendPushWithSearchCondition();
         device.openNotification();
