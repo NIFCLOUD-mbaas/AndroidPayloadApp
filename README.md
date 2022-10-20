@@ -18,9 +18,9 @@
 
 ## 動作環境
 
-* MacOS Big Sur 11.6 
-* Android Studio Arctic Fox 2020.3.1
-* Pixle 3 - Android 12 (Simulator)
+* MacOS Monterey version 12.5
+* Android Studio Chipmunk | 2021.2.1 Patch 2
+* Pixel 2 - Android 13 (Simulator)
 
 ※上記内容で動作確認をしています
 

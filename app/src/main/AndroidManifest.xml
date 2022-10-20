@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
 
     <application
         android:allowBackup="true"
@@ -25,6 +27,7 @@
         <meta-data android:name="notificationOverlap" android:value="0"/>
 
         <activity
+            android:exported="true"
             android:name="mbaas.com.nifcloud.androidpayloadapp.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>

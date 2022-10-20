@@ -1,6 +1,15 @@
 package mbaas.com.nifcloud.androidpayloadapp;
 
+import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
+
+import android.os.Build;
 import android.util.Log;
+
+import androidx.test.uiautomator.UiDevice;
+import androidx.test.uiautomator.UiObject;
+import androidx.test.uiautomator.UiObjectNotFoundException;
+import androidx.test.uiautomator.UiSelector;
+
 import com.nifcloud.mbaas.core.DoneCallback;
 import com.nifcloud.mbaas.core.NCMBException;
 import com.nifcloud.mbaas.core.NCMBInstallation;
@@ -47,5 +56,18 @@ public class Utils {
                 });
             }
         });
+    }
+    protected static void allowPermissionsIfNeeded() {
+        if (Build.VERSION.SDK_INT >= 33) {
+            UiDevice device = UiDevice.getInstance(getInstrumentation());
+            UiObject allowPermissions = device.findObject(new UiSelector().text("Allow"));
+            if (allowPermissions.exists()) {
+                try {
+                    allowPermissions.click();
+                } catch (UiObjectNotFoundException e) {
+                    Log.d(TAG, "Error: " + e.getMessage());
+                }
+            }
+        }
     }
 }
